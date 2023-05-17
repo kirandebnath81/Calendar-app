@@ -11,6 +11,9 @@ const CreateModal = () => {
   const { selectedDate, editedEvent, dispatch } = useContext(EventsContext);
   const [inputValue, setInputValue] = useState(editedEvent?.event || "");
 
+  const EmptyEditedEvent = () =>
+    dispatch({ type: ACTION_TYPE.SET_EDITED_EVENT, payload: null });
+
   // save event func
   const saveHandler = () => {
     dispatch({
@@ -18,12 +21,13 @@ const CreateModal = () => {
       payload: { eventDate: selectedDate, event: inputValue },
     });
     setIsCreateModal(false);
+    EmptyEditedEvent();
   };
 
   //close modal func
   const closeBtnHandler = () => {
     setIsCreateModal(false);
-    dispatch({ type: ACTION_TYPE.SET_EDITED_EVENT, payload: null });
+    EmptyEditedEvent();
   };
 
   return (
