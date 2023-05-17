@@ -1,0 +1,65 @@
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.6rem;
+  box-shadow: var(--border-box-shadow);
+  padding-top: 0.6rem;
+  position: relative;
+}
+
+.cell__content {
+  width: clamp(20px, 40%, 35px);
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3rem;
+}
+
+.cell__content--date {
+  transition: var(--bg-color-transition);
+}
+
+.cell__content--date:hover {
+  cursor: pointer;
+  background-color: var(--btn-hover-primary-color);
+}
+.cell__content--date:active {
+  background-color: var(--btn-active-color);
+}
+
+.cell__content--highlight {
+  background-color: rgb(43, 34, 209);
+  color: #fff;
+  border-radius: 0.5rem;
+}
+.cell__content--highlight:hover {
+  background-color: rgb(41, 34, 181);
+}
+.cell__content--highlight:active {
+  background-color: rgb(15, 12, 81);
+}
+
+.cell__event {
+  width: 92%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 3.5rem;
+  border-radius: 0.2rem;
+  background-color: var(--event-theme-color);
+  cursor: pointer;
+}
+
+.cell__event-text {
+  width: 90%;
+  font-size: 1.15rem;
+  overflow-x: hidden;
+  white-space: nowrap;
+  color: #fff;
+}

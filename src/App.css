@@ -1,0 +1,23 @@
+[data-info] {
+  position: relative;
+}
+
+[data-info]:hover::after {
+  content: attr(data-info);
+  position: absolute;
+  z-index: 5;
+  top: 5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media screen and (max-width: 650px) {
+  [data-info]:hover::after {
+    left: 0.1rem;
+  }
+}
